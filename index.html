@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#05050b" />
+  <meta name="description" content="BeatBayngr instant beat mastering from the GLOKEY Co-Lab SupaAudio Suite." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="BeatBayngr" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <title>BeatBayngr</title>
+
+  <style>
+/* inline fallback so the app never renders raw HTML if css path fails */
+:root{
+  --bg:#05050b; --panel:#0b0d16; --panel2:#11131f; --text:#f6f8ff; --muted:#9aa6bd;
+  --blue:#00c8ff; --pink:#ff2bd6; --hot:#ff6a00; --green:#33ff93; --warn:#ffd54a;
+  --line:rgba(255,255,255,.12); --radius:24px; --shadow:0 20px 80px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}html{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% 0%,rgba(0,200,255,.12),transparent 34%),radial-gradient(circle at 90% 8%,rgba(255,43,214,.16),transparent 36%),linear-gradient(180deg,#05050b,#080810 60%,#05050b);overflow-x:hidden}.hidden{display:none!important}.app-shell{width:min(1040px,100%);margin:0 auto;padding:18px 14px max(26px,env(safe-area-inset-bottom));}.splash{position:fixed;inset:0;z-index:50;background:#030307;display:grid;place-items:center;text-align:center;transition:opacity .45s ease,visibility .45s ease}.splash.done{opacity:0;visibility:hidden}.splash-logo{width:min(86vw,640px);filter:drop-shadow(0 0 34px rgba(0,200,255,.35)) drop-shadow(0 0 44px rgba(255,43,214,.35));animation:breath 1.3s ease-in-out infinite alternate}.splash-line{color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:.76rem;margin-top:-12vh}.hero{position:relative;text-align:center;padding:18px 0 10px}.hero-logo{width:min(92vw,560px);border-radius:18px;filter:drop-shadow(0 0 22px rgba(0,200,255,.25)) drop-shadow(0 0 22px rgba(255,43,214,.24))}.suite-line{margin:6px 0 0;color:var(--muted);font-size:.86rem}.suite-line b,.brand-foot b{background:linear-gradient(90deg,var(--blue),var(--pink));-webkit-background-clip:text;color:transparent}.install-btn{position:absolute;right:0;top:4px;border:1px solid rgba(0,200,255,.35);background:rgba(0,200,255,.08);color:white;padding:10px 13px;border-radius:999px;box-shadow:0 0 24px rgba(0,200,255,.13)}button,input,select{font:inherit}button{cursor:pointer;touch-action:manipulation}.upload-card,.status-panel,.player-panel,.export-panel,.preset-card{background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(14px)}.upload-card{border-radius:var(--radius);padding:14px;margin:12px 0}.upload-btn{width:100%;min-height:132px;border:1px dashed rgba(255,255,255,.22);border-radius:20px;background:radial-gradient(circle at 50% 20%,rgba(0,200,255,.14),transparent 42%),rgba(0,0,0,.22);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;transition:.2s ease}.upload-btn:hover,.upload-card.drag{border-color:rgba(255,43,214,.7);box-shadow:0 0 36px rgba(255,43,214,.18)}.pulse-orb{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--pink));box-shadow:0 0 22px rgba(0,200,255,.65),0 0 34px rgba(255,43,214,.45);animation:pulse 1.5s infinite}.upload-title{font-size:1.18rem;font-weight:900}.upload-sub{font-size:.82rem;color:var(--muted)}.file-meta{margin-top:10px;padding:12px;border-radius:16px;background:rgba(0,0,0,.24);color:#d9e4ff;font-size:.85rem;line-height:1.5}.status-panel{border-radius:18px;padding:11px 13px;margin:12px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#cbd8f5}.mini-meters{height:28px;display:flex;align-items:flex-end;gap:4px}.mini-meters span{width:5px;border-radius:6px;background:linear-gradient(var(--pink),var(--blue));animation:meter 1s infinite ease-in-out}.mini-meters span:nth-child(2){animation-delay:.12s}.mini-meters span:nth-child(3){animation-delay:.24s}.mini-meters span:nth-child(4){animation-delay:.36s}.mini-meters span:nth-child(5){animation-delay:.48s}.section-head{padding:8px 2px 12px}.section-head h1,.section-head h2{margin:0 0 4px;font-size:1.45rem;letter-spacing:-.04em}.section-head p{margin:0;color:var(--muted);font-size:.9rem}.compact{padding-top:0}.preset-grid{display:grid;grid-template-columns:1fr;gap:12px}.preset-card{border-radius:22px;display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center;padding:12px;text-align:left;color:white;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;position:relative;overflow:hidden}.preset-card:after{content:"";position:absolute;inset:-1px;background:linear-gradient(135deg,transparent,rgba(0,200,255,.08),rgba(255,43,214,.08),transparent);opacity:.4;pointer-events:none}.preset-card.selected{border-color:rgba(255,43,214,.76);transform:translateY(-2px);box-shadow:0 0 42px rgba(255,43,214,.18),0 0 34px rgba(0,200,255,.11)}.preset-card img{width:96px;height:96px;object-fit:cover;border-radius:18px;box-shadow:0 0 18px rgba(0,200,255,.18),0 0 18px rgba(255,43,214,.15)}.preset-info{position:relative;z-index:1}.preset-info h3{margin:0 0 6px;font-size:1.05rem}.preset-info p{margin:0;color:#d5def1;font-size:.84rem;line-height:1.25}.best{display:block;margin-top:7px;color:var(--muted);font-size:.75rem}.player-panel,.export-panel{border-radius:var(--radius);padding:14px;margin:14px 0}.disabled{opacity:.55}.player-top{display:flex;align-items:center;justify-content:space-between;gap:12px}.eyebrow{color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em}.player-top h2{margin:3px 0 0;font-size:1.15rem}.toggle-btn,.primary-action,.secondary-action{border:0;border-radius:16px;color:white;background:linear-gradient(135deg,var(--blue),var(--pink));padding:13px 16px;font-weight:900;box-shadow:0 0 26px rgba(255,43,214,.18);transition:transform .12s ease,filter .12s ease}.toggle-btn{min-width:102px}.primary-action{min-width:106px}.secondary-action{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13)}button:active{transform:scale(.97)}button:disabled{opacity:.45;cursor:not-allowed}canvas{width:100%;height:116px;display:block;margin:10px 0;border-radius:18px;background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.08)}.transport{display:flex;align-items:center;gap:12px}.timebar{flex:1;display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;color:var(--muted);font-size:.76rem}.timebar input{width:100%;accent-color:var(--pink)}.select-wrap{display:block;color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}.select-wrap select{margin-top:7px;width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:#0a0c14;color:white;padding:13px}.action-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.brand-foot{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;color:var(--muted);font-size:.78rem;padding:16px 4px 6px}.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(20px);background:#10131f;color:white;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:11px 15px;box-shadow:0 10px 40px rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.22s ease;z-index:60}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.is-processing .mini-meters span{animation-duration:.42s}.is-processing .upload-card{box-shadow:0 0 46px rgba(255,106,0,.2)}@keyframes breath{to{transform:scale(1.025)}}@keyframes pulse{0%,100%{transform:scale(.96);opacity:.8}50%{transform:scale(1.08);opacity:1}}@keyframes meter{0%,100%{height:6px}50%{height:28px}}@media(min-width:720px){.preset-grid{grid-template-columns:1fr 1fr}.preset-card{grid-template-columns:110px 1fr}.preset-card img{width:110px;height:110px}.action-row{grid-template-columns:repeat(4,1fr)}.transport{gap:16px}canvas{height:140px}.section-head h1{font-size:1.8rem}}
+
+  </style>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="splash" class="splash" aria-label="BeatBayngr loading screen">
+    <img src="assets/logos/beatbayngr-master-logo.png" alt="BeatBayngr" class="splash-logo" />
+    <div class="splash-line">from the GLOKEY Co-Lab SupaAudio Suite</div>
+  </div>
+
+  <main class="app-shell">
+    <header class="hero">
+      <button id="installBtn" class="install-btn hidden" type="button">Install App</button>
+      <img src="assets/logos/beatbayngr-master-logo.png" alt="BeatBayngr" class="hero-logo" />
+      <p class="suite-line">from the <b>GLOKEY Co-Lab SupaAudio Suite</b></p>
+    </header>
+
+    <section class="upload-card" id="dropZone">
+      <input id="fileInput" type="file" accept="audio/mpeg,audio/mp3,audio/wav,audio/x-wav,audio/flac,audio/*" hidden />
+      <button id="uploadBtn" class="upload-btn" type="button">
+        <span class="pulse-orb"></span>
+        <span class="upload-title">Tap To Upload Beat</span>
+        <span class="upload-sub">MP3 - WAV - FLAC when supported by your browser</span>
+      </button>
+      <div id="fileMeta" class="file-meta hidden"></div>
+    </section>
+
+    <section class="status-panel" aria-live="polite">
+      <div id="statusText">Upload audio to unlock presets.</div>
+      <div class="mini-meters" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+    </section>
+
+    <section class="preset-section">
+      <div class="section-head">
+        <h1>Choose The Cook</h1>
+        <p>Tap a preset card. Preview it. Toggle original/master in real time.</p>
+      </div>
+      <div id="presetGrid" class="preset-grid"></div>
+    </section>
+
+    <section class="player-panel disabled" id="playerPanel">
+      <div class="player-top">
+        <div>
+          <span class="eyebrow">Preview Deck</span>
+          <h2 id="activePresetName">No Preset Selected</h2>
+        </div>
+        <button id="abToggle" class="toggle-btn" type="button" disabled>Original</button>
+      </div>
+      <canvas id="waveCanvas" width="800" height="180" aria-label="Audio waveform visualization"></canvas>
+      <div class="transport">
+        <div class="transport-buttons">
+          <button id="playBtn" type="button" class="primary-action" disabled>Play</button>
+          <button id="pauseBtn" type="button" class="secondary-action transport-action" disabled>Pause</button>
+          <button id="stopBtn" type="button" class="secondary-action transport-action" disabled>Stop</button>
+        </div>
+        <div class="timebar"><span id="currentTime">0:00</span><input id="seekBar" type="range" min="0" max="1000" value="0" disabled /><span id="duration">0:00</span></div>
+      </div>
+    </section>
+
+    <section class="export-panel disabled" id="exportPanel">
+      <div class="section-head compact">
+        <h2>Deliver</h2>
+        <p>Export naming uses <b>(BBv1)</b>. Clips add <b>(Clip)</b>.</p>
+      </div>
+      <label class="select-wrap">Output Type
+        <select id="formatSelect">
+          <option value="mp3">MP3 - default lightweight export</option>
+          <option value="flac">FLAC - lossless when available</option>
+          <option value="wav">WAV - full-size fallback export</option>
+        </select>
+      </label>
+      <div id="formatHint" class="format-hint">MP3 is selected by default. If your browser cannot encode it directly, BeatBayngr will let you know before export.</div>
+      <div class="action-row">
+        <button id="downloadBtn" class="secondary-action" type="button" disabled>Download</button>
+        <button id="clipBtn" class="secondary-action" type="button" disabled>Clip 1 Min</button>
+        <button id="shareFileBtn" class="secondary-action" type="button" disabled>Share File</button>
+        <button id="shareAppBtn" class="secondary-action" type="button">Share App</button>
+      </div>
+    </section>
+
+    <footer class="brand-foot">
+      <span>Powered by <b>GLOKEY</b></span>
+      <a class="home-link" href="https://bananazbeatshop.vercel.app" target="_blank" rel="noreferrer" aria-label="Open Bananaz Beatshop home">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3.4 3.5 10v10.2c0 .72.58 1.3 1.3 1.3h5.1v-6.3h4.2v6.3h5.1c.72 0 1.3-.58 1.3-1.3V10L12 3.4Z"></path>
+        </svg>
+      </a>
+      <span>Ear Design by <b>ThisBeatIzBananaz</b></span>
+    </footer>
+  </main>
+
+  <div id="shareSheet" class="share-sheet hidden" aria-hidden="true">
+    <div id="shareSheetBackdrop" class="share-sheet-backdrop"></div>
+    <div class="share-sheet-card" role="dialog" aria-modal="true" aria-labelledby="shareSheetTitle">
+      <div class="share-sheet-head">
+        <div>
+          <span class="eyebrow">Share BeatBayngr</span>
+          <h2 id="shareSheetTitle">Send It Out</h2>
+        </div>
+        <button id="closeShareSheetBtn" class="share-close" type="button" aria-label="Close share options">Close</button>
+      </div>
+      <div class="share-grid">
+        <button class="share-option" type="button" data-share-target="native">Native Share</button>
+        <button class="share-option" type="button" data-share-target="x">X</button>
+        <button class="share-option" type="button" data-share-target="facebook">Facebook</button>
+        <button class="share-option" type="button" data-share-target="whatsapp">WhatsApp</button>
+        <button class="share-option" type="button" data-share-target="email">Email</button>
+        <button class="share-option" type="button" data-share-target="copy">Copy Link</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <audio id="originalAudio" preload="metadata"></audio>
+  <audio id="masterAudio" preload="metadata"></audio>
+
+  <script src="js/presets.js"></script>
+  <script src="js/audio-engine.js"></script>
+  <script src="js/pwa.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
